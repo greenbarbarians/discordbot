@@ -34,6 +34,11 @@ async def on_message(message):
 	if message.content.startswith('Ollie is so dumb'):
 		msg = 'Yes, he is.'.format(message)
 		await client.send_message(message.channel, msg)
+	
+	if 'nsfw' in message.content:
+		print('Keyword found in message')
+		msg = 'https://cdn.discordapp.com/attachments/263062760424865792/532602893287686165/brown_cat.png'.format(message)
+		await client.send_message(message.channel, msg)
 
 keep_alive()
 token = os.environ.get("DISCORD_BOT_SECRET")
