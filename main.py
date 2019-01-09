@@ -23,6 +23,11 @@ async def on_message(message):
 	if message.author == client.user:
 		return
 
+	if message.content.startswith('-help'):
+		print('help menu')
+		msg = 'Help menu:\n`-help` - Get help\n`-dab` - Get a dab\n`-hentai` - For the good stuff\n'.format(message)
+		await client.send_message(message.channel, msg)
+
 	if message.content.startswith('-hello'):
 		print('Hello')
 		msg = 'Hello {0.author.mention}'.format(message)
