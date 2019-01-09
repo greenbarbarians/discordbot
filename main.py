@@ -1,9 +1,19 @@
 import discord
-
-TOKEN = 'mytoken ;)'
+import os
+from keep_alive import keep_alive
 
 client = discord.Client()
 
+
+@client.event
+async def on_ready():
+  print("I'm in")
+  print(client.user)
+  
+# @client.event
+# async def on_message(message):
+#   if message.author != client.user:
+#    await client.send_message(message.channel, message.content[::-1])
 
 @client.event
 async def on_message(message):
@@ -11,20 +21,14 @@ async def on_message(message):
 	if message.author == client.user:
 		return
 
-	if message.content.startswith('!hello'):
+	if message.content.startswith('-hello'):
 		msg = 'Hello {0.author.mention}'.format(message)
 		await client.send_message(message.channel, msg)
 
-	if message.content.startswith('!dab'):
+	if message.content.startswith('-dab'):
 		msg = '( ͡° ͜ʖ ͡°)'.format(message)
 		await client.send_message(message.channel, msg)
-
-
-@client.event
-async def on_ready():
-	print('Logged in as')
-	print(client.user.name)
-	print(client.user.id)
-	print('------')
-
-client.run(TOKEN)
+    
+keep_alive()
+token = os.environ.get("DISCORD_BOT_SECRET")
+client.run(token)
