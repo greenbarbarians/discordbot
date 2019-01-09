@@ -65,6 +65,26 @@ async def on_message(message):
 		msg = 'No flip off'.format(message)
 		await client.send_message(message.channel, msg)
 
+	if 'furry' in message.content:
+		print('Sad furry picture')
+		msg = 'I lost my family in the great gamer wars https://cdn.discordapp.com/attachments/263062760424865792/530898062990770192/Justice.jpg'.format(message)
+		await client.send_message(message.channel, msg)
+
+	if 'gamer' in message.content:
+		print('Sad furry picture')
+		msg = 'I lost my family in the great gamer wars https://cdn.discordapp.com/attachments/263062760424865792/530898062990770192/Justice.jpg'.format(message)
+		await client.send_message(message.channel, msg)
+
+	if 'duck' in message.content:
+		print('Duck!')
+		msg = 'https://giphy.com/gifs/duck-excited-school-krewXUB6LBja'.format(message)
+		await client.send_message(message.channel, msg)
+
+	if 'cat' in message.content:
+		print('Brown cat')
+		msg = 'https://cdn.discordapp.com/attachments/263062760424865792/476401246945935380/oops.jpg'.format(message)
+		await client.send_message(message.channel, msg)
+
 keep_alive()
 token = os.environ.get("DISCORD_BOT_SECRET")
 client.run(token)
