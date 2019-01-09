@@ -9,11 +9,7 @@ client = discord.Client()
 async def on_ready():
   print("I'm in")
   print(client.user)
-  
-# @client.event
-# async def on_message(message):
-#   if message.author != client.user:
-#    await client.send_message(message.channel, message.content[::-1])
+
 
 @client.event
 async def on_message(message):
@@ -27,6 +23,10 @@ async def on_message(message):
 
 	if message.content.startswith('-dab'):
 		msg = '( ͡° ͜ʖ ͡°)'.format(message)
+		await client.send_message(message.channel, msg)
+		
+	if message.content.startswith('Keep Yourself Safe'):
+		msg = 'Thanks Bungus for keeping us safe'.format(message)
 		await client.send_message(message.channel, msg)
     
 keep_alive()
