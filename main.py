@@ -25,7 +25,7 @@ async def on_message(message):
 
 	if message.content.startswith('-help'):
 		print('help menu')
-		msg = 'Help menu:\n`-help` - Get help\n`-dab` - Get a dab\n`-hentai` - For the good stuff\n'.format(message)
+		msg = 'Help menu:\n`-help` - Get help\n`-dab` - Get a dab\n`-hentai` - For the good stuff\n`-meme` - Get a dank meme\n'.format(message)
 		await client.send_message(message.channel, msg)
 
 	if message.content.startswith('-hello'):
@@ -48,7 +48,7 @@ async def on_message(message):
 		await client.send_message(message.channel, msg)
 	
 	if 'nsfw' in message.content:
-		print('Keyword found in message')
+		print('Gwizz')
 		msg = 'Someone say nsfw? I got you https://cdn.discordapp.com/attachments/263062760424865792/532602893287686165/brown_cat.png'.format(message)
 		await client.send_message(message.channel, msg)
 
@@ -84,6 +84,14 @@ async def on_message(message):
 		print('Brown cat')
 		msg = 'https://cdn.discordapp.com/attachments/263062760424865792/476401246945935380/oops.jpg'.format(message)
 		await client.send_message(message.channel, msg)
+
+	if '-meme' in message.content:
+		print('Meme time')
+		response = requests.get("https://www.reddit.com/r/meme.json", headers={"User-Agent": "linux:memebot:v1.0.0"})
+		page = response.json()
+		all_urls = random.choice(page["data"]["children"])["data"]["url"]
+		# msg = 'all_urls'.format(message)
+		await client.send_message(message.channel, all_urls)
 
 keep_alive()
 token = os.environ.get("DISCORD_BOT_SECRET")
