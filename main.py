@@ -3,6 +3,8 @@ from discord.ext import commands
 import os
 from keep_alive import keep_alive
 import random, requests
+import json
+import urllib.request
 
 client = discord.Client()
 
@@ -23,9 +25,18 @@ async def on_message(message):
 	if message.author == client.user:
 		return
 
+	if message.content.startswith('-cat'):
+		print('cats')
+		url = "https://api.thecatapi.com/v1/images/search"
+		response = urllib.request.urlopen(url)
+		result = json.loads(response.read())
+
+		url = result[0]['url']
+		await client.send_message(message.channel, url)
+
 	if message.content.startswith('-help'):
 		print('help menu')
-		msg = 'Help menu:\n`-help` - Get help\n`-dab` - Get a dab\n`-hentai` - For the good stuff\n`-meme` - Get a dank meme\n'.format(message)
+		msg = 'Help menu:\n`-help` - Get help\n`-dab` - Get a dab\n`-hentai` - For the good stuff\n`-meme` - Get a dank meme\n`-cat` - Get a picture of a cat\n'.format(message)
 		await client.send_message(message.channel, msg)
 
 	if message.content.startswith('-hello'):
@@ -65,22 +76,12 @@ async def on_message(message):
 		msg = 'No flip off'.format(message)
 		await client.send_message(message.channel, msg)
 
-	if 'furry' in message.content:
-		print('Sad furry picture')
-		msg = 'I lost my family in the great gamer wars https://cdn.discordapp.com/attachments/263062760424865792/530898062990770192/Justice.jpg'.format(message)
-		await client.send_message(message.channel, msg)
-
-	if 'gamer' in message.content:
-		print('Sad furry picture')
-		msg = 'I lost my family in the great gamer wars https://cdn.discordapp.com/attachments/263062760424865792/530898062990770192/Justice.jpg'.format(message)
-		await client.send_message(message.channel, msg)
-
 	if 'duck' in message.content:
 		print('Duck!')
 		msg = 'https://giphy.com/gifs/duck-excited-school-krewXUB6LBja'.format(message)
 		await client.send_message(message.channel, msg)
 
-	if 'cat' in message.content:
+	if 'brown' in message.content:
 		print('Brown cat')
 		msg = 'https://cdn.discordapp.com/attachments/263062760424865792/476401246945935380/oops.jpg'.format(message)
 		await client.send_message(message.channel, msg)
