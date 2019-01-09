@@ -6,13 +6,17 @@ import random, requests
 
 client = discord.Client()
 
-client = commands.Bot(command_prefix="-")
+client = commands.Bot("-")
 
 @client.event
 async def on_ready():
 	print("I'm in")
 	print(client.user)
 
+class Main_Commands():
+	global bot
+	def __init__(self, bot):
+		self.bot = bot
 
 @client.event
 async def on_message(message):
@@ -20,14 +24,17 @@ async def on_message(message):
 		return
 
 	if message.content.startswith('-hello'):
+		print('Hello')
 		msg = 'Hello {0.author.mention}'.format(message)
 		await client.send_message(message.channel, msg)
 
 	if message.content.startswith('-dab'):
+		print('Dab!')
 		msg = '( ͡° ͜ʖ ͡°)'.format(message)
 		await client.send_message(message.channel, msg)
 		
 	if message.content.startswith('Keep Yourself Safe'):
+		print('Bungus response')
 		msg = 'Thanks Bungus for keeping us safe'.format(message)
 		await client.send_message(message.channel, msg)
 
@@ -47,6 +54,11 @@ async def on_message(message):
 		all_urls = random.choice(page["data"]["children"])["data"]["url"]
 		# msg = 'all_urls'.format(message)
 		await client.send_message(message.channel, all_urls)
+
+	if 'join' in message.content:
+		print('Join')
+		msg = 'No flip off'.format(message)
+		await client.send_message(message.channel, msg)
 
 keep_alive()
 token = os.environ.get("DISCORD_BOT_SECRET")
