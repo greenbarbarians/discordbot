@@ -47,6 +47,11 @@ async def on_message(message):
 		print('black cat')
 		msg = 'https://cdn.discordapp.com/attachments/293807439713927169/565473888524304404/image0.jpg'
 		await client.send_message(message.channel, msg)
+	# toontown
+	elif 'toontown' in message.content:
+		print('yikes')
+		msg = 'Someone say loser? https://cdn.discordapp.com/attachments/565499249316462592/565507485788536832/ttr-screenshot-_Brother2Band2Bsister_-Mon-Aug-18-18-40-21-2014-107256.png'
+		await client.send_message(message.channel, msg)
 	await client.process_commands(message)
 
 
