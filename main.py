@@ -1,3 +1,5 @@
+# a terrible bot for a small server with friends
+
 from discord.ext import commands
 import os
 import random, requests
