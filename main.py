@@ -1,6 +1,7 @@
 # a terrible bot for a small server with friends
 
 from discord.ext import commands
+import discord
 import os
 import random
 import requests
@@ -9,17 +10,21 @@ import urllib.request
 from os.path import join, dirname
 from dotenv import load_dotenv
 
+# load .env
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
+# client settings
 client = commands.Bot(command_prefix='-')
-
 token = os.getenv("TOKEN")
 
 
 @client.event
 async def on_ready():
+	# noinspection PyArgumentList
+	await client.change_presence(game=discord.Game(name="with Keshin"))
 	print('client ready')
+
 
 # if message contains commands
 @client.event
@@ -45,6 +50,7 @@ async def on_message(message):
 	await client.process_commands(message)
 
 
+# get a cat picture
 @client.command()
 async def cat():
 	print('cats')
@@ -56,6 +62,7 @@ async def cat():
 	await client.say(url)
 
 
+# help menu
 @client.command()
 async def support():
 	print('help menu')
@@ -63,6 +70,7 @@ async def support():
 	await client.say(msg)
 
 
+# on marcus' request
 @client.command()
 async def hentai():
 	print('Yum time')
@@ -73,6 +81,7 @@ async def hentai():
 	await client.say(msg)
 
 
+# an excited duck
 @client.command()
 async def duck():
 	print('Duck!')
@@ -80,10 +89,11 @@ async def duck():
 	await client.say(msg)
 
 
+# get a meme from /r/okbuddyretard
 @client.command()
 async def meme():
 	print('Meme time')
-	response = requests.get("https://www.reddit.com/r/meme.json", headers={"User-Agent": "linux:memebot:v1.0.0"})
+	response = requests.get("https://www.reddit.com/r/okbuddyretard.json", headers={"User-Agent": "linux:memebot:v1.0.0"})
 	page = response.json()
 	all_urls = random.choice(page["data"]["children"])["data"]["url"]
 	msg = all_urls
