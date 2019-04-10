@@ -67,6 +67,11 @@ async def on_message(message):
 		all_urls = random.choice(page["data"]["children"])["data"]["url"]
 		msg = all_urls
 		await client.send_message(message.channel, msg)
+	# holy image
+	elif 'clembo' in message.content:
+		print('clembo')
+		msg = 'amen https://cdn.discordapp.com/attachments/293807439713927169/565625753366954044/lugi.gif'
+		await client.send_message(message.channel, msg)
 	await client.process_commands(message)
 
 
