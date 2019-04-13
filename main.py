@@ -84,11 +84,14 @@ async def cat():
 	await client.say(url)
 
 
-# help menu
+# get a meme from /r/okbuddyretard
 @client.command()
-async def support():
-	print('help menu')
-	msg = 'Help menu:\n`-help` - Get help\n`-dab` - Get a dab\n`-hentai` - For the good stuff\n`-meme` - Get a dank meme\n`-cat` - Get a picture of a cat\n`-nsfw` - Gwizz\n`-duck` - Duckle\n'
+async def meme():
+	print('Meme time')
+	async with client.http2.get("https://www.reddit.com/r/okbuddyretard.json") as response:
+		page = await response.json()
+	all_urls = random.choice(page["data"]["children"])["data"]["url"]
+	msg = all_urls
 	await client.say(msg)
 
 
@@ -103,22 +106,27 @@ async def hentai():
 	await client.say(msg)
 
 
+# help menu
+@client.command()
+async def support():
+	print('help menu')
+	msg = 'Help menu:\n`-help` - Get help\n`-dab` - Get a dab\n`-baka` - Baka gif\n`-hentai` - For the good stuff\n`-meme` - Get a dank meme\n`-cat` - Get a picture of a cat\n`-nsfw` - Gwizz\n`-duck` - Duckle\n'
+	await client.say(msg)
+
+
 # an excited duck
 @client.command()
 async def duck():
-	print('Duck!')
+	print('duck')
 	msg = 'https://giphy.com/gifs/duck-excited-school-krewXUB6LBja'
 	await client.say(msg)
 
 
-# get a meme from /r/okbuddyretard
+# baka gif
 @client.command()
-async def meme():
-	print('Meme time')
-	async with client.http2.get("https://www.reddit.com/r/okbuddyretard.json") as response:
-		page = await response.json()
-	all_urls = random.choice(page["data"]["children"])["data"]["url"]
-	msg = all_urls
+async def baka():
+	print('baka')
+	msg = 'https://media.tenor.com/images/38fff1193d3535d83a3e4d73f032ef61/tenor.gif'
 	await client.say(msg)
 
 
