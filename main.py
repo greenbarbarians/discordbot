@@ -4,9 +4,7 @@ from discord.ext import commands
 import discord
 import os
 import random
-import requests
-import json
-import urllib.request
+import aiohttp
 from os.path import join, dirname
 from dotenv import load_dotenv
 
@@ -22,6 +20,7 @@ token = os.getenv("TOKEN")
 @client.event
 async def on_ready():
 	# noinspection PyArgumentList
+	client.http2 = aiohttp.ClientSession(headers={"User-Agent": "linux:memebot:v1.0.0"})
 	await client.change_presence(game=discord.Game(name="with Keshin"))
 	print('client ready')
 
@@ -55,15 +54,15 @@ async def on_message(message):
 	# sam radford
 	elif 'radford' in message.content:
 		print('radford')
-		response = requests.get("https://www.reddit.com/r/tinderpickuplines.json", headers={"User-Agent": "linux:memebot:v1.0.0"})
-		page = response.json()
+		async with client.http2.get("https://www.reddit.com/r/tinderpickuplines.json") as response:
+                        page = await response.json()
 		all_urls = random.choice(page["data"]["children"])["data"]["url"]
 		msg = all_urls
 		await client.send_message(message.channel, msg)
 	elif 'sam' in message.content:
 		print('radford')
-		response = requests.get("https://www.reddit.com/r/tinderpickuplines.json", headers={"User-Agent": "linux:memebot:v1.0.0"})
-		page = response.json()
+		async with client.http2.get("https://www.reddit.com/r/tinderpickuplines.json") as response:
+                        page = await response.json()
 		all_urls = random.choice(page["data"]["children"])["data"]["url"]
 		msg = all_urls
 		await client.send_message(message.channel, msg)
@@ -79,9 +78,8 @@ async def on_message(message):
 @client.command()
 async def cat():
 	print('cats')
-	url = "https://api.thecatapi.com/v1/images/search"
-	response = urllib.request.urlopen(url)
-	result = json.loads(response.read())
+	async with client.http2.get("https://api.thecatapi.com/v1/images/search") as response:
+                result = await response.json()
 
 	url = result[0]['url']
 	await client.say(url)
@@ -99,8 +97,8 @@ async def support():
 @client.command()
 async def hentai():
 	print('Yum time')
-	response = requests.get("https://www.reddit.com/r/hentai.json", headers={"User-Agent": "linux:memebot:v1.0.0"})
-	page = response.json()
+	async with client.http2.get("https://www.reddit.com/r/hentai.json") as response:
+        	page = await response.json()
 	all_urls = random.choice(page["data"]["children"])["data"]["url"]
 	msg = all_urls
 	await client.say(msg)
@@ -118,8 +116,8 @@ async def duck():
 @client.command()
 async def meme():
 	print('Meme time')
-	response = requests.get("https://www.reddit.com/r/okbuddyretard.json", headers={"User-Agent": "linux:memebot:v1.0.0"})
-	page = response.json()
+	async with client.http2.get("https://www.reddit.com/r/okbuddyretard.json") as response:        
+        	page = await response.json()
 	all_urls = random.choice(page["data"]["children"])["data"]["url"]
 	msg = all_urls
 	await client.say(msg)
