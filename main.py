@@ -19,8 +19,8 @@ token = os.getenv("TOKEN")
 
 @client.event
 async def on_ready():
-	# noinspection PyArgumentList
 	client.http2 = aiohttp.ClientSession(headers={"User-Agent": "linux:memebot:v1.0.0"})
+	# noinspection PyArgumentList
 	await client.change_presence(game=discord.Game(name="with Keshin"))
 	print('client ready')
 
@@ -55,14 +55,14 @@ async def on_message(message):
 	elif 'radford' in message.content:
 		print('radford')
 		async with client.http2.get("https://www.reddit.com/r/tinderpickuplines.json") as response:
-                        page = await response.json()
+			page = await response.json()
 		all_urls = random.choice(page["data"]["children"])["data"]["url"]
 		msg = all_urls
 		await client.send_message(message.channel, msg)
 	elif 'sam' in message.content:
 		print('radford')
 		async with client.http2.get("https://www.reddit.com/r/tinderpickuplines.json") as response:
-                        page = await response.json()
+			page = await response.json()
 		all_urls = random.choice(page["data"]["children"])["data"]["url"]
 		msg = all_urls
 		await client.send_message(message.channel, msg)
@@ -79,8 +79,7 @@ async def on_message(message):
 async def cat():
 	print('cats')
 	async with client.http2.get("https://api.thecatapi.com/v1/images/search") as response:
-                result = await response.json()
-
+		result = await response.json()
 	url = result[0]['url']
 	await client.say(url)
 
@@ -98,7 +97,7 @@ async def support():
 async def hentai():
 	print('Yum time')
 	async with client.http2.get("https://www.reddit.com/r/hentai.json") as response:
-        	page = await response.json()
+		page = await response.json()
 	all_urls = random.choice(page["data"]["children"])["data"]["url"]
 	msg = all_urls
 	await client.say(msg)
@@ -116,8 +115,8 @@ async def duck():
 @client.command()
 async def meme():
 	print('Meme time')
-	async with client.http2.get("https://www.reddit.com/r/okbuddyretard.json") as response:        
-        	page = await response.json()
+	async with client.http2.get("https://www.reddit.com/r/okbuddyretard.json") as response:
+		page = await response.json()
 	all_urls = random.choice(page["data"]["children"])["data"]["url"]
 	msg = all_urls
 	await client.say(msg)
