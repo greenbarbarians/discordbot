@@ -51,21 +51,6 @@ async def on_message(message):
 		print('yikes')
 		msg = 'Someone say loser? https://cdn.discordapp.com/attachments/565499249316462592/565507485788536832/ttr-screenshot-_Brother2Band2Bsister_-Mon-Aug-18-18-40-21-2014-107256.png'
 		await client.send_message(message.channel, msg)
-	# sam radford
-	elif 'radford' in message.content:
-		print('radford')
-		async with client.http2.get("https://www.reddit.com/r/tinderpickuplines.json") as response:
-			page = await response.json()
-		all_urls = random.choice(page["data"]["children"])["data"]["url"]
-		msg = all_urls
-		await client.send_message(message.channel, msg)
-	elif 'sam' in message.content:
-		print('radford')
-		async with client.http2.get("https://www.reddit.com/r/tinderpickuplines.json") as response:
-			page = await response.json()
-		all_urls = random.choice(page["data"]["children"])["data"]["url"]
-		msg = all_urls
-		await client.send_message(message.channel, msg)
 	# holy image
 	elif 'clembo' in message.content:
 		print('clembo')
