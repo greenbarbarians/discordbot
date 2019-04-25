@@ -21,7 +21,7 @@ token = os.getenv("TOKEN")
 async def on_ready():
 	client.http2 = aiohttp.ClientSession(headers={"User-Agent": "linux:memebot:v1.0.0"})
 	# noinspection PyArgumentList
-	await client.change_presence(activty=discord.Game("with Keshin"))
+	await client.change_presence(activity=discord.Game("with Keshin"))
 	print('client ready')
 
 
@@ -57,6 +57,13 @@ async def on_message(message):
 		msg = 'amen https://cdn.discordapp.com/attachments/293807439713927169/565625753366954044/lugi.gif'
 		await message.channel.send(msg)
 	await client.process_commands(message)
+
+
+# get a mal profile
+@client.command()
+async def mal(ctx, arg):
+	link = 'https://myanimelist.net/profile/' + arg
+	await ctx.send(link)
 
 
 # get a cat picture
