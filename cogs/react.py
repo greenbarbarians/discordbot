@@ -5,6 +5,7 @@ class react(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
 
+
 	@commands.Cog.listener()
 	async def on_message(self, message):
 		# don't reply to itself
@@ -35,7 +36,6 @@ class react(commands.Cog):
 			print('clembo')
 			msg = 'amen https://cdn.discordapp.com/attachments/293807439713927169/565625753366954044/lugi.gif'
 			await message.channel.send(msg)
-		await self.bot.process_commands(message)
 
 
 def setup(bot):
