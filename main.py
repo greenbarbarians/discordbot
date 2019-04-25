@@ -62,7 +62,24 @@ async def on_message(message):
 # get a mal profile
 @client.command()
 async def mal(ctx, arg):
+	print('mal profile')
 	link = 'https://myanimelist.net/profile/' + arg
+	await ctx.send(link)
+
+
+# mal anime list
+@client.command()
+async def malanime(ctx, arg):
+	print('mal anime')
+	link = 'https://myanimelist.net/animelist/' + arg
+	await ctx.send(link)
+
+
+# mal manga list
+@client.command()
+async def malmanga(ctx, arg):
+	print('mal manga')
+	link = 'https://myanimelist.net/mangalist/' + arg
 	await ctx.send(link)
 
 
@@ -102,7 +119,7 @@ async def hentai(ctx):
 @client.command()
 async def support(ctx):
 	print('help menu')
-	msg = 'Help menu:\n`-help` - Get help\n`-dab` - Get a dab\n`-baka` - Baka gif\n`-hentai` - For the good stuff\n`-meme` - Get a dank meme\n`-cat` - Get a picture of a cat\n`-nsfw` - Gwizz\n`-duck` - Duckle\n'
+	msg = 'Help menu:\n`-help` - Get help\n`-dab` - Get a dab\n`-baka` - Baka gif\n`-hentai` - For the good stuff\n`-meme` - Get a dank meme\n`-cat` - Get a picture of a cat\n`-nsfw` - Gwizz\n`-duck` - Duckle\n`-mal` - View MyAnimeList profile\n`-malanime` - View MAL anime list\n`-malmanga` - View MAL manga list\n'
 	await ctx.send(msg)
 
 
