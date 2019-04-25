@@ -18,9 +18,9 @@ class help(commands.Cog):
 		`-meme` - Get a dank meme
 		`-cat` - Get a picture of a cat
 		`-duck` - Get a good duck picture
-		`-mal` - View MyAnimeList profile
-		`-malanime` - View MAL anime list
-		`-malmanga` - View MAL manga list
+		`-mal [username]` - View MyAnimeList profile
+		`-malanime [username]` - View MAL anime list
+		`-malmanga [username]` - View MAL manga list
 		
 		The bot also has various reaction commands that are not detailed here.
 		'''
