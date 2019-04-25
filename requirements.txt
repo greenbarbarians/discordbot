@@ -2,7 +2,7 @@
 # https://github.com/damnever/pigar
 
 # main.py: 3,4
-discord.py == 0.16.12
+discord.py == 1.0.1
 
 # main.py: 11
 python_dotenv == 0.10.1
