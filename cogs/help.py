@@ -13,7 +13,6 @@ class help(commands.Cog):
 		msg = '''
 		\nHelp menu:
 		`-help` - Get help
-		`-dab` - Get a dab
 		`-baka` - Baka gif
 		`-hentai` - For the good stuff
 		`-meme` - Get a dank meme
