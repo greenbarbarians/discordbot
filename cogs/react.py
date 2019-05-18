@@ -39,6 +39,10 @@ class react(commands.Cog):
 		elif 'breaking-bad' in message.content:
 			print('delete breaking bad gif')
 			await message.delete()
+		# delete breaking bad and better call saul gifs
+		elif 'breakingbad' in message.content:
+			print('delete breaking bad gif')
+			await message.delete()
 		# delete better call saul gif
 		elif 'better-call' in message.content:
 			print('delete better call saul gif')
