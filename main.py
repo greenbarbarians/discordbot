@@ -15,7 +15,7 @@ bot.remove_command('help')
 token = os.getenv("TOKEN")
 
 # cog loading
-initial_extensions = ['cogs.mal','cogs.react','cogs.cmd','cogs.help']
+initial_extensions = ['cogs.mal', 'cogs.react', 'cogs.cmd', 'cogs.help']
 if __name__ == '__main__':
 	for extension in initial_extensions:
 		bot.load_extension(extension)

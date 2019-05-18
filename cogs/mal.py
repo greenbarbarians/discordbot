@@ -5,7 +5,6 @@ class MAL(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
 
-
 	# get a mal profile
 	@commands.command()
 	async def mal(self, ctx, arg):

@@ -1,7 +1,7 @@
 from discord.ext import commands
 
 
-class react(commands.Cog):
+class React(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
 
@@ -50,4 +50,4 @@ class react(commands.Cog):
 
 
 def setup(bot):
-	bot.add_cog(react(bot))
+	bot.add_cog(React(bot))
