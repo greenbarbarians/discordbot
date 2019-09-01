@@ -35,6 +35,11 @@ class React(commands.Cog):
 			print('clembo')
 			msg = 'amen https://cdn.discordapp.com/attachments/293807439713927169/565625753366954044/lugi.gif'
 			await message.channel.send(msg)
+		# clean
+		elif 'clean' in message.content:
+			print('clean')
+			msg = 'https://cdn.discordapp.com/attachments/263062760424865792/600429304857493507/unknown.png'
+			await message.channel.send(msg)
 		# delete breaking bad and better call saul gifs
 		elif 'breaking-bad' in message.content:
 			print('delete breaking bad gif')
