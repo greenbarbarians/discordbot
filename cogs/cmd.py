@@ -2,10 +2,9 @@ from discord.ext import commands
 import random
 
 
-class cmd(commands.Cog):
+class Cmd(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
-
 
 	# an excited duck
 	@commands.command()
@@ -52,4 +51,4 @@ class cmd(commands.Cog):
 
 
 def setup(bot):
-	bot.add_cog(cmd(bot))
+	bot.add_cog(Cmd(bot))

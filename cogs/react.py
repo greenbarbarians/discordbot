@@ -1,7 +1,7 @@
 from discord.ext import commands
 
 
-class react(commands.Cog):
+class React(commands.Cog):
 	def __init__(self, bot):
 		self.bot = bot
 
@@ -35,6 +35,11 @@ class react(commands.Cog):
 			print('clembo')
 			msg = 'amen https://cdn.discordapp.com/attachments/293807439713927169/565625753366954044/lugi.gif'
 			await message.channel.send(msg)
+		# clean
+		elif 'clean' in message.content:
+			print('clean')
+			msg = 'https://cdn.discordapp.com/attachments/263062760424865792/600429304857493507/unknown.png'
+			await message.channel.send(msg)
 		# delete breaking bad and better call saul gifs
 		elif 'breaking-bad' in message.content:
 			print('delete breaking bad gif')
@@ -50,4 +55,4 @@ class react(commands.Cog):
 
 
 def setup(bot):
-	bot.add_cog(react(bot))
+	bot.add_cog(React(bot))
