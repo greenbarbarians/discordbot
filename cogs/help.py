@@ -2,14 +2,14 @@ from discord.ext import commands
 
 
 class Help(commands.Cog):
-	def __init__(self, bot):
-		self.bot = bot
+    def __init__(self, bot):
+        self.bot = bot
 
-	# help menu
-	@commands.command()
-	async def help(self, ctx):
-		print('help menu')
-		msg = '''
+    # help menu
+    @commands.command()
+    async def help(self, ctx):
+        print('help menu')
+        msg = '''
 		\nHelp menu:
 		`-help` - Get help
 		`-baka` - Baka gif
@@ -23,8 +23,8 @@ class Help(commands.Cog):
 		
 		The bot also has various reaction commands that are not detailed here.
 		'''
-		await ctx.send(msg)
+        await ctx.send(msg)
 
 
 def setup(bot):
-	bot.add_cog(Help(bot))
+    bot.add_cog(Help(bot))
