@@ -18,17 +18,17 @@ token = os.getenv("TOKEN")
 # cog loading
 initial_extensions = ['cogs.mal', 'cogs.react', 'cogs.cmd', 'cogs.help']
 if __name__ == '__main__':
-    for extension in initial_extensions:
-        bot.load_extension(extension)
+	for extension in initial_extensions:
+		bot.load_extension(extension)
 
 
 # startup
 @bot.event
 async def on_ready():
-    bot.http2 = aiohttp.ClientSession(headers={"User-Agent": "linux:memebot:v1.0.0"})
-    # noinspection PyArgumentList
-    await bot.change_presence(activity=discord.Game("with Keshin"))
-    print('client ready')
+	bot.http2 = aiohttp.ClientSession(headers={"User-Agent": "linux:memebot:v1.0.0"})
+	# noinspection PyArgumentList
+	await bot.change_presence(activity=discord.Game("with Keshin"))
+	print('client ready')
 
 
 bot.run(token)
