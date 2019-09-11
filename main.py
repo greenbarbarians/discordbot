@@ -1,8 +1,9 @@
-from discord.ext import commands
-import discord
 import os
-import aiohttp
 from os.path import join, dirname
+
+import aiohttp
+import discord
+from discord.ext import commands
 from dotenv import load_dotenv
 
 # load .env
@@ -19,6 +20,7 @@ initial_extensions = ['cogs.mal', 'cogs.react', 'cogs.cmd', 'cogs.help']
 if __name__ == '__main__':
 	for extension in initial_extensions:
 		bot.load_extension(extension)
+
 
 # startup
 @bot.event

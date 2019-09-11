@@ -1,5 +1,6 @@
-from discord.ext import commands
 import random
+
+from discord.ext import commands
 
 
 class Cmd(commands.Cog):
@@ -32,18 +33,41 @@ class Cmd(commands.Cog):
 	# on marcus' request
 	@commands.command()
 	async def hentai(self, ctx):
-		print('Yum time')
-		async with self.bot.http2.get("https://www.reddit.com/r/hentai.json") as response:
-			page = await response.json()
-		all_urls = random.choice(page["data"]["children"])["data"]["url"]
-		msg = all_urls
-		await ctx.send(msg)
+		subreddits = (['hentai', 'ecchi'])
+		subredditchoice = random.choice(subreddits)
+		if subredditchoice == 'hentai':
+			print('from /r/hentai')
+			async with self.bot.http2.get("https://www.reddit.com/r/hentai.json") as response:
+				page = await response.json()
+			all_urls = random.choice(page["data"]["children"])["data"]["url"]
+			msg = all_urls
+			await ctx.send(msg)
+		elif subredditchoice == 'ecchi':
+			print('from /r/ecchi')
+			async with self.bot.http2.get("https://www.reddit.com/r/ecchi.json") as response:
+				page = await response.json()
+			all_urls = random.choice(page["data"]["children"])["data"]["url"]
+			msg = all_urls
+			await ctx.send(msg)
+		else:
+			print('oops')
+			return
 
 	# get a meme from /r/okbuddyretard
 	@commands.command()
 	async def meme(self, ctx):
 		print('Meme time')
 		async with self.bot.http2.get("https://www.reddit.com/r/okbuddyretard.json") as response:
+			page = await response.json()
+		all_urls = random.choice(page["data"]["children"])["data"]["url"]
+		msg = all_urls
+		await ctx.send(msg)
+
+	# random hot post from a subreddit
+	@commands.command()
+	async def reddit(self, ctx, arg):
+		print('random subreddit', arg)
+		async with self.bot.http2.get("https://www.reddit.com/r/" + str(arg) + ".json") as response:
 			page = await response.json()
 		all_urls = random.choice(page["data"]["children"])["data"]["url"]
 		msg = all_urls

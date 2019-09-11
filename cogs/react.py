@@ -16,14 +16,14 @@ class React(commands.Cog):
 			msg = 'Someone say nsfw? I got you https://cdn.discordapp.com/attachments/263062760424865792/532602893287686165/brown_cat.png'
 			await message.channel.send(msg)
 		# brown cat
-		elif 'brown' in message.content:
+		elif 'brown cat' in message.content:
 			print('brown cat')
 			msg = 'https://cdn.discordapp.com/attachments/263062760424865792/476401246945935380/oops.jpg'
 			await message.channel.send(msg)
 		# black cat
-		elif 'black' in message.content:
+		elif 'black cat' in message.content:
 			print('black cat')
-			msg = 'https://cdn.discordapp.com/attachments/293807439713927169/565473888524304404/image0.jpg'
+			msg = 'https://cdn.discordapp.com/attachments/263062760424865792/617299515069956096/image0.jpg'
 			await message.channel.send(msg)
 		# toontown
 		elif 'toontown' in message.content:
@@ -40,18 +40,11 @@ class React(commands.Cog):
 			print('clean')
 			msg = 'https://cdn.discordapp.com/attachments/263062760424865792/600429304857493507/unknown.png'
 			await message.channel.send(msg)
-		# delete breaking bad and better call saul gifs
-		elif 'breaking-bad' in message.content:
-			print('delete breaking bad gif')
-			await message.delete()
-		# delete breaking bad and better call saul gifs
-		elif 'breakingbad' in message.content:
-			print('delete breaking bad gif')
-			await message.delete()
-		# delete better call saul gif
-		elif 'better-call' in message.content:
-			print('delete better call saul gif')
-			await message.delete()
+		# dumbass
+		elif 'nathan' in message.content:
+			print('nathan is epic')
+			msg = 'https://cdn.discordapp.com/attachments/447136986277347339/621380608047710208/Nathan_as_a_rabbit.jpg'
+			await message.channel.send(msg)
 
 
 def setup(bot):
