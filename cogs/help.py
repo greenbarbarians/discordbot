@@ -20,6 +20,7 @@ class Help(commands.Cog):
 		`-mal [username]` - View MyAnimeList profile
 		`-malanime [username]` - View MAL anime list
 		`-malmanga [username]` - View MAL manga list
+		`-reddit [subreddit name]` - Get a random hot post from a subreddit
 		
 		The bot also has various reaction commands that are not detailed here.
 		'''
