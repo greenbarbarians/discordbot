@@ -44,6 +44,11 @@ class React(commands.Cog):
 		elif 'nathan' in message.content:
 			print('nathan is epic')
 			msg = 'https://cdn.discordapp.com/attachments/447136986277347339/621380608047710208/Nathan_as_a_rabbit.jpg'
+			await message.channel.send(msg)#lol
+
+		if 'lol' in message.content:
+			print('Funny message')
+			msg = 'Haha! LOL! :-)'
 			await message.channel.send(msg)
 
 
