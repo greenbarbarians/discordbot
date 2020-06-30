@@ -50,9 +50,13 @@ class React(commands.Cog):
 			print('Funny message')
 			msg = 'Haha! LOL! :-)'
 			await message.channel.send(msg)
-		if 'Joe Neal' in message.content:
+		if 'joe neal' in message.content:
 			print('Big ass Schlong')
 			msg = 'https://cdn.discordapp.com/attachments/456385470629281794/719919615358271529/pic_of_the_century.jpg'
+			await message.channel.send(msg)
+		if "!image giacomo" in message.content:
+			print('Sexy Man')
+			msg = 'https://cdn.discordapp.com/attachments/456385470629281794/727485889688895508/eDQvTAB.png'
 			await message.channel.send(msg)
 
 def setup(bot):
