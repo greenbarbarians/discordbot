@@ -41,7 +41,7 @@ class React(commands.Cog):
 			msg = 'https://cdn.discordapp.com/attachments/263062760424865792/600429304857493507/unknown.png'
 			await message.channel.send(msg)
 		# bopping cat
-		elif "-play" or "!play" or ".play" in message.content:
+		elif "-play" or "!play" or ".play" or "_play" in message.content:
 			print('music cat')
 			msg= 'https://media.discordapp.net/attachments/453830474339450905/739205450666606652/image0-37-1.gif'
 			await message.channel.send(msg)
