@@ -40,18 +40,11 @@ class React(commands.Cog):
 			print('clean')
 			msg = 'https://cdn.discordapp.com/attachments/263062760424865792/600429304857493507/unknown.png'
 			await message.channel.send(msg)
-		# delete breaking bad and better call saul gifs
-		elif 'breaking-bad' in message.content:
-			print('delete breaking bad gif')
-			await message.delete()
-		# delete breaking bad and better call saul gifs
-		elif 'breakingbad' in message.content:
-			print('delete breaking bad gif')
-			await message.delete()
-		# delete better call saul gif
-		elif 'better-call' in message.content:
-			print('delete better call saul gif')
-			await message.delete()
+		# bopping cat
+		elif "-play" or "!play" or ".play" in message.content:
+			print('music cat')
+			msg= 'https://media.discordapp.net/attachments/453830474339450905/739205450666606652/image0-37-1.gif'
+			await message.channel.send(msg)
 
 
 def setup(bot):
