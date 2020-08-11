@@ -46,6 +46,5 @@ class React(commands.Cog):
 			msg= 'https://media.discordapp.net/attachments/453830474339450905/739205450666606652/image0-37-1.gif'
 			await message.channel.send(msg)
 
-
 def setup(bot):
 	bot.add_cog(React(bot))
