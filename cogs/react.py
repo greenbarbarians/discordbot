@@ -45,6 +45,26 @@ class React(commands.Cog):
 			print('music cat')
 			msg= 'https://media.discordapp.net/attachments/453830474339450905/739205450666606652/image0-37-1.gif'
 			await message.channel.send(msg)
+		# lol
+		elif "lol" or "Lol" or "LOL" in message.content:
+			print("lol")
+			msg= "Haha! LOL! :-)"
+			await message.channel.send(msg)
+		# operation piss off ollie
+		elif "mukbang" or "Mukbang" or "Nikocado" or "nikocado" in message.content:
+			print("Nick")
+			msg= "https://cdn.discordapp.com/attachments/688778639700918373/826771127589666816/unknown.png"
+			await message.channel.send(msg)
+		# monkey space
+		elif "nasa" or "Nasa" or "NASA" or "spaceship" in message.content:
+			print("monkey")
+			msg= "https://images-ext-2.discordapp.net/external/u-PXAjyoEwDerRvcHgcAlWSjd_UwbVw4zCesYXjUYOI/https/i.imgur.com/PMwhpZF.mp4"
+			await message.channel.send(msg)
+		# Big Floppa
+		elif "Big Floppa" or "big floppa" or "Floppa" or "floppa" or "Fanta" or "Gregory" or "Caracal" or "gregory" or "caracal"
+			print("floppa")
+			msg= "Big Floppa https://cdn.discordapp.com/attachments/688778639700918373/830396177727750164/caracal-gregory-meme.png"
+			await message.channel.send(msg)
 
 def setup(bot):
 	bot.add_cog(React(bot))
