@@ -8,4 +8,4 @@ discord.py == 1.0.1
 python_dotenv == 0.10.1
 
 # main.py: 7
-aiohttp == 3.5.4
+aiohttp == 3.7.4
